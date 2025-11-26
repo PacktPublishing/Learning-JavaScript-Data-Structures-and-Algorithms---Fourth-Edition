@@ -111,3 +111,5 @@ out/
 # Temporary directories
 tmp/
 temp/
+.github
+.github/
