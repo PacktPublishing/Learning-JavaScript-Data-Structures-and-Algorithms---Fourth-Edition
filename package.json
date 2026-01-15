@@ -2,6 +2,7 @@
   "name": "learning-javascript-data-structures-and-algorithms---fourth-edition",
   "version": "1.0.0",
   "description": "Learning JavaScript Data Structures and Algorithms - Fourth Edition by Packt Publishing",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

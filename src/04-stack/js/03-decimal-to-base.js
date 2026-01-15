@@ -6,7 +6,7 @@
  * algorithm works for different number systems.
  */
 
-const Stack = require('./stack');
+import Stack from './stack.js';
 
 /**
  * Converts a decimal number to any base (2-36)

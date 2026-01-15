@@ -6,7 +6,7 @@
  * the stack and can be undone by popping from the stack.
  */
 
-const Stack = require('./stack');
+import Stack from './stack.js';
 
 console.log('=== Document Editor Undo Feature Demo ===\n');
 
