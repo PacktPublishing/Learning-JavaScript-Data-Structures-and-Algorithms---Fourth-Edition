@@ -331,7 +331,7 @@ class LinkedList {
 }
 
 // Example usage and demonstration
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   console.log('=== LinkedList Implementation Demo ===\n');
 
   // Create a new linked list
