@@ -7,7 +7,7 @@
  * a stack and then popped to get the binary digits in correct order.
  */
 
-const Stack = require('./stack');
+import Stack from './stack.js';
 
 /**
  * Converts a decimal number to binary using a stack

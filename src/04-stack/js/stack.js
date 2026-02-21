@@ -94,4 +94,4 @@ class Stack {
 }
 
 // Export the Stack class for use in other files
-module.exports = Stack;
+export default Stack;
