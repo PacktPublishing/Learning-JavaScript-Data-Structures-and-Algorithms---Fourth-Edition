@@ -1,109 +1,126 @@
-# Learning JavaScript Data Structures and Algorithms - Fourth Edition
+# Learning JavaScript Data Structures and Algorithms
 
-This repository contains the complete source code examples for the book **"Learning JavaScript Data Structures and Algorithms - Fourth Edition"** by **Packt Publishing**.
+Book development — *Learning JavaScript Data Structures and Algorithms*, Packt Publishing.
 
-## About This Book
+## Install Jupyter and run the notebooks
 
-Learn how to implement the most important data structures and algorithms in JavaScript. This book covers:
+A notebook (`.ipynb`) combines explanations, executable code cells, and their output. You open the file in Jupyter rather than installing the notebook itself.
 
-- **Arrays, Stacks, and Queues** - Linear data structures
-- **Linked Lists** - Dynamic data structures  
-- **Trees and Graphs** - Hierarchical and network structures
-- **Sorting and Searching** - Essential algorithms
-- **Advanced Algorithms** - Dynamic programming, greedy algorithms, and more
+These notebooks run **JavaScript**. Python runs Jupyter's interface, Node.js executes the examples, and the **IJavascript kernel** connects the two. All Chapter 4 examples are included in [the notebook](src/chapter4/chapter4_examples.ipynb); you do not need separate JavaScript or TypeScript source files.
 
-Each chapter includes both **JavaScript** and **TypeScript** implementations with practical, real-world examples.
+### 1. Install the prerequisites
 
-## Prerequisites
+Install [Python 3](https://www.python.org/downloads/) and a [Node.js LTS release](https://nodejs.org/en/download/) (includes npm). If you already have them, skip their installation. Open a new terminal afterward.
 
-Before running the examples, make sure you have the following installed:
+Check that they are available:
 
-### Required
-- **Node.js** (version 14.0 or higher)
-  - Download from [nodejs.org](https://nodejs.org/)
-  - Verify installation: `node --version`
-
-### For TypeScript Examples
-The TypeScript dependencies are already configured in this repository. After cloning, simply run:
-
-```bash
-npm install
+```sh
+python3 --version
+node --version
+npm --version
 ```
 
-This will install:
-- TypeScript compiler
-- ts-node for running TypeScript files directly
-- Type definitions for Node.js
+On Windows, use `py --version` instead of `python3 --version`. The chapter uses modern JavaScript features such as private fields, `Array.at()`, and `Object.hasOwn()`.
 
-## Getting Started
+### 2. Install Jupyter in a virtual environment
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/PacktPublishing/Learning-JavaScript-Data-Structures-and-Algorithms---Fourth-Edition.git
-   cd Learning-JavaScript-Data-Structures-and-Algorithms---Fourth-Edition
-   ```
+Open a terminal in this project's root folder. On your Mac, that is:
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Navigate to any chapter and run examples:**
-   ```bash
-   # For JavaScript examples
-   node src/04-stack/js/01-undo-feature.js
-   
-   # For TypeScript examples  
-   npx ts-node src/04-stack/ts/01-undo-feature.ts
-   ```
-
-## Repository Structure
-
-```
-├── src/
-│   ├── 04-stack/          # Chapter 4: Stacks
-│   │   ├── js/            # JavaScript implementations
-│   │   ├── ts/            # TypeScript implementations
-│   │   └── README.md      # Chapter-specific documentation
-│   ├── 05-queue/          # Chapter 5: Queues
-│   ├── 06-linked-list/    # Chapter 6: Linked Lists
-│   └── ...               # Additional chapters
-├── package.json          # Dependencies and scripts
-└── README.md             # This file
+```sh
+cd "/Users/arismarko/Projects/Book-development---Learning-JavaScript-Data-Structures-and-Algorithms"
 ```
 
-## Chapters
+On another computer, substitute the location where you downloaded or cloned the project.
 
-Each chapter folder contains:
-- **JavaScript examples** (`js/` folder) - Modern ES6+ JavaScript
-- **TypeScript examples** (`ts/` folder) - Type-safe implementations
-- **README.md** - Chapter-specific documentation and running instructions
+**macOS / Linux:**
 
-## Key Features
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install jupyterlab notebook
+```
 
-### JavaScript Examples
-- ✅ Modern ES6+ syntax (const, let, arrow functions)
-- ✅ CommonJS modules for Node.js compatibility
-- ✅ Extensive comments and documentation
-- ✅ Step-by-step execution demos
+If this project already has a working `.venv`, skip its creation and start with activation.
 
-### TypeScript Examples
-- ✅ Generic types and interfaces for type safety
-- ✅ Comprehensive input validation
-- ✅ Structured error handling
-- ✅ Enhanced IDE support with autocomplete
-- ✅ Self-documenting code with type annotations
+**Windows (Command Prompt):**
 
-## Contributing
+```bat
+py -m venv .venv
+.venv\Scripts\activate.bat
+python -m pip install --upgrade pip
+python -m pip install jupyterlab notebook
+```
 
-This repository contains the official examples from the Packt Publishing book. For questions about the content, please refer to the book or contact Packt Publishing.
+This installs both JupyterLab and the Jupyter Notebook interface. Either can open the same notebook files. The virtual environment keeps Python dependencies local to this project. These installation commands follow the [official Jupyter installation guide](https://jupyter.org/install).
 
-## License
+### 3. Install the JavaScript kernel
 
-This project is licensed under the terms specified by Packt Publishing for the book "Learning JavaScript Data Structures and Algorithms - Fourth Edition".
+Keep the virtual environment active and run:
 
-## Support
+```sh
+npm install -g ijavascript
+ijsinstall --spec-path=full --hide-undefined
+jupyter kernelspec list
+```
 
-- **Book Support**: [Packt Publishing Support](https://www.packtpub.com/support)
-- **Technical Issues**: Check individual chapter READMEs for specific running instructions
-- **Updates**: Watch this repository for any updates or corrections
+The list should include `javascript`. The npm command installs IJavascript; `ijsinstall` registers it with Jupyter for your user. Full paths help Jupyter find Node.js. If you later change your Node.js installation, rerun `ijsinstall --spec-path=full --hide-undefined`. See the [IJavascript installation guide](https://github.com/n-riesco/ijavascript/blob/master/doc/install.md) and [kernel options](https://github.com/n-riesco/ijavascript/blob/master/doc/usage.md).
+
+### 4. Open Chapter 4 and run it
+
+From the project root, with the virtual environment active:
+
+```sh
+jupyter lab src/chapter4/chapter4_examples.ipynb
+```
+
+Alternatively, use the Jupyter Notebook interface:
+
+```sh
+jupyter notebook src/chapter4/chapter4_examples.ipynb
+```
+
+Run one of these commands. Keep that terminal open while using Jupyter. If a browser does not open automatically, open the local URL printed in the terminal.
+
+1. Select the **JavaScript (Node.js)** kernel; some installations label it **Javascript (Node.js)**.
+2. If Jupyter reports that **`jsbook`** is missing, choose the installed JavaScript kernel. `jsbook` is the original author's local kernel name; you do not need that exact name. You can also change it through **Kernel → Change Kernel**.
+3. Choose **Run → Run All Cells** to execute the notebook from top to bottom. To run one cell, select it and press **Shift+Enter**.
+4. Look for **`All Chapter 4 checks passed.`** near the end.
+5. Save the notebook to retain your outputs and kernel selection.
+
+Run the `Stack` definition before cells that use it. After restarting a kernel, run all cells again to recreate the definitions. The supplied TypeScript examples have been adapted to executable JavaScript for this notebook.
+
+### 5. Start it again later
+
+You only need to install the dependencies once. On macOS / Linux, open a terminal in the project folder and run:
+
+```sh
+source .venv/bin/activate
+jupyter lab src/chapter4/chapter4_examples.ipynb
+```
+
+On Windows Command Prompt, activate with `.venv\Scripts\activate.bat` instead. To stop Jupyter, press **Ctrl+C** in its terminal and confirm shutdown if prompted. Then run `deactivate` to leave the virtual environment.
+
+### Troubleshooting
+
+| Problem | What to do |
+| --- | --- |
+| `jupyter: command not found` | Activate `.venv` and install Jupyter using the commands above. |
+| No JavaScript kernel is listed | With `.venv` active, rerun `ijsinstall --spec-path=full --hide-undefined`, then restart Jupyter. |
+| `ijsinstall` is not found | Reopen your terminal, reactivate `.venv`, and check that npm's global executables are on your PATH. On Windows Command Prompt, try `%APPDATA%\npm\ijsinstall --spec-path=full --hide-undefined`. |
+| Syntax errors mentioning Python | Switch from the Python kernel to the JavaScript kernel. |
+| `Stack is not defined` | Run all cells from the top so the class definition executes first. |
+| Kernel fails after a Node.js upgrade | Reinstall IJavascript under the active Node.js version and rerun the kernel registration command. |
+| npm reports a compiler or ZeroMQ build error | Consult the platform-specific prerequisites in the linked IJavascript installation guide. |
+
+## Chapter 7: Sets
+
+[Open the Chapter 7 notebook](src/chapter7/chapter7_examples.ipynb). It includes its own setup instructions and all implementations, examples, exercises, and checks.
+
+After following the installation steps above, activate `.venv` and launch it from the project root:
+
+```sh
+jupyter lab src/chapter7/chapter7_examples.ipynb
+```
+
+Select the JavaScript kernel, run all cells, and look for `All Chapter 7 checks passed.`
