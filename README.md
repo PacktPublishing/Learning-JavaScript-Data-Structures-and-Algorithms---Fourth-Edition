@@ -90,6 +90,76 @@ Run one of these commands. Keep that terminal open while using Jupyter. If a bro
 
 Run the `Stack` definition before cells that use it. After restarting a kernel, run all cells again to recreate the definitions. The supplied TypeScript examples have been adapted to executable JavaScript for this notebook.
 
+### Run Chapter 10
+
+The tree examples, all 12 checkpoint solutions, and the three main exercise solutions are available as executable JavaScript cells in [the Chapter 10 notebook](src/chapter10/chapter10_examples.ipynb). With `.venv` active, launch it from the project root:
+
+```sh
+jupyter lab src/chapter10/chapter10_examples.ipynb
+```
+
+Select **JavaScript (Node.js)** and run all cells from the top. The final code cell should print **`All Chapter 10 checks passed.`**
+
+### Run Chapter 11
+
+The binary heap and heap sort examples are available in [the Chapter 11 notebook](src/chapter11/chapter11_examples.ipynb). With `.venv` active, launch it from the project root:
+
+```sh
+jupyter lab src/chapter11/chapter11_examples.ipynb
+```
+
+Select **JavaScript (Node.js)** and run all cells from the top. The final cell should print **`All Chapter 11 checks passed.`**
+
+### Run Chapter 12
+
+The graph examples and worked solutions for all 12 “Try it” tasks are in [the Chapter 12 notebook](src/chapter12/chapter12_examples.ipynb). With `.venv` active, launch it from the project root:
+
+```sh
+jupyter lab src/chapter12/chapter12_examples.ipynb
+```
+
+Select **JavaScript (Node.js)** and run all cells from the top. The final code cell should print **`All Chapter 12 checks passed.`**
+
+### Run Chapter 13
+
+The sorting, searching, and shuffle examples, plus worked solutions for all 12 “Try it” tasks, are in [the Chapter 13 notebook](src/chapter13/chapter13_examples.ipynb). With `.venv` active, launch it from the project root:
+
+```sh
+jupyter lab src/chapter13/chapter13_examples.ipynb
+```
+
+Select **JavaScript (Node.js)** and run all cells from the top. The final code cell should print **`All Chapter 13 checks passed.`**
+
+### Run Chapter 14
+
+The divide-and-conquer, dynamic programming, greedy, backtracking, and functional programming examples are in [the Chapter 14 notebook](src/chapter14/chapter14_examples.ipynb). It includes reconstructed solutions, explanatory tables, maze paths, and a Sudoku solver. Every code cell runs independently and can be rerun.
+
+```sh
+jupyter lab src/chapter14/chapter14_examples.ipynb
+```
+
+Select **JavaScript (Node.js)**. Run all cells and look for **`All Chapter 14 checks passed.`** in the final code cell.
+
+### Run Chapter 15
+
+The algorithm complexity examples, reference tables, and worked solutions for all seven exercises are in [the Chapter 15 notebook](src/chapter15/chapter15_examples.ipynb). With `.venv` active, launch it from the project root:
+
+```sh
+jupyter lab src/chapter15/chapter15_examples.ipynb
+```
+
+Select **JavaScript (Node.js)** and run all cells from the top. The final code cell should print **`All Chapter 15 checks passed.`**
+
+### Run Chapter 16
+
+The substring searches, dictionary matching, suffix-array queries, GCD, modular exponentiation, and all seven worked exercises are in [the Chapter 16 notebook](src/chapter16/chapter16_examples.ipynb). Every code cell can run independently and be rerun.
+
+```sh
+jupyter lab src/chapter16/chapter16_examples.ipynb
+```
+
+Select **JavaScript (Node.js)**. Run all cells and look for **`All Chapter 16 checks passed.`** in the final code cell.
+
 ### 5. Start it again later
 
 You only need to install the dependencies once. On macOS / Linux, open a terminal in the project folder and run:
